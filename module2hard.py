@@ -1,15 +1,12 @@
-import random
+num = int(input("Введите число от 3 до 20: "))
 
-def generate_password(n):
-    result = ""
-    for i in range(1, n):
-        for j in range(1, 21):
-            if i + j == n:
-                result += str(i) + str(j)
-    return result
 
-# Введите число от 3 до 20
-n = random.randint(3, 20)  # Генерация случайного числа от 3 до 20
-password = generate_password(n)
-print("Случайное число:", n)
-print("Пароль для числа", n, ":", password)
+result = ""
+
+for i in range(1, num):
+    for j in range(i+1, num):
+        if (i + j) % num == 0:
+            result += str(i) + str(j)
+
+
+print("Пароль для числа", num, ":", result)
